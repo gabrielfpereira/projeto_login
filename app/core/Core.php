@@ -37,8 +37,9 @@ class Core{
         }
         
         // instacia o controller chamando o metodo e passa os parametros
-        call_user_func(array($this->controller, $this->method,$this->params));
+        // echo faz rederizar o resultado a view
+        echo call_user_func(array(new $this->controller, $this->method),$this->params);
 
-        var_dump($this->controller, $this->method, $this->params);
+        //var_dump($this->controller, $this->method, $this->params);
     }
 }
