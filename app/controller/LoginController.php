@@ -3,8 +3,12 @@
 class LoginController{
     // metodo que chama a tela de login
     public function index(){
-       
-        require 'app/view/login.html' ;
+        //verifica se tem uma sessao iniciada não permitindo assim acessar a pagina de login
+        if(isset($_SESSION['id_usuario'])){
+            require 'app/view/admin.html';
+        }else{
+            require 'app/view/login.html' ;
+        }
       
     }
 

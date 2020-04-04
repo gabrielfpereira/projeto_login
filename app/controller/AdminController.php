@@ -8,7 +8,7 @@ class AdminController{
     public function close(){
         session_unset();
         session_destroy();
-        header('location: ../login/index');
+        header('location: http://localhost/projeto_login/login/index');
     }
     
 }
