@@ -41,7 +41,8 @@ class LoginController{
                 header('location: http://localhost/projeto_login/login/index');
             }
         }else{
-            echo "Preencha todos os campos";
+            $_SESSION['msg_error'] = "Preencha todos os campos";
+            header('location: http://localhost/projeto_login/login/index');
         }
 
         

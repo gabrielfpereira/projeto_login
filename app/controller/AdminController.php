@@ -2,7 +2,12 @@
 class AdminController{
 
     public function index(){
-        require 'app/view/admin.html';
+        if(isset($_SESSION['id_usuario'])){
+            require 'app/view/admin.html';
+        }else{
+            require 'app/view/login.html';
+        }
+        
     }
 
     public function close(){
