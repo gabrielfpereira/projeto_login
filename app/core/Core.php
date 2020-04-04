@@ -4,10 +4,11 @@ class Core{
     private $controller;
     private $method;
     private $params = array();
+    private $user;
 
     public function __construct()
     {
-        
+        $this->user = $_SESSION['id_usuario'] ?? null;
     }
 
     // esta função trata a URL recebida
@@ -35,6 +36,21 @@ class Core{
             $this->controller = 'LoginController';
             $this->method = 'index'; // metodo que vai chamar a view login
         }
+
+        // if($this->user){
+        //     $permission = ['adminController'];
+        //     if(in_array($this->controller,$permission)){
+        //         $this->controller = 'adminController';
+        //         $this->method = 'index';
+
+        //     }
+        // }else{
+        //     $permission = ['LoginController'];
+        //     if(!in_array($this->controller, $permission)){
+        //         $this->controller = 'LoginController';
+        //         $this->method = 'index';
+        //     }
+        // }
         
         // instacia o controller chamando o metodo e passa os parametros
         // echo faz rederizar o resultado a view
