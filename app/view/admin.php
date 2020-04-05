@@ -13,7 +13,8 @@
     <div class="container">
       <div class="row bg-warning py-3">
         <div class="mx-auto col-lg-5 col-md-7 col-10">
-          <h1>Olá! Seja bem vindo {Usuario}</h1>
+          <!-- Nesse trecho é inserido no nome do usuario -->
+          <h1 id="usuario">Olá! Seja bem vindo <?php echo $_SESSION['nome_usuario']?></h1>
           <p class="mb-3">Estamos muito felizes em poder te receber aqui. =)</p> 
           <a class="btn btn-primary" href="http://localhost/projeto_login/admin/close">Sair</a>
         </div>
